@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+@font-face {
+    font-family: "Ember";
+    src: url(/assets/fonts/AmazonEmber_Lt.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Ember";
+    src: url(/assets/fonts/AmazonEmber_Bd.ttf);
+    font-weight: 700;
+}
+
+:root {
+    --tint: 30, 36, 46;
+}
+
+body {
+    /* font-family: "Ember", Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: "Ubuntu", Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(var(--tint));
+}
+
+#logo {
+    width: 100px;
+}
+
+nav {
+    background-color: rgba(var(--tint));
+}
+
+.nav-item .nav-link {
+    position: relative;
+}
+
+.nav-item.active .nav-link:before {
+    content: "";
+    width: calc(100% - 1rem);
+    position: absolute;
+    border-bottom: 2px solid hsla(0, 0%, 100%, 0.7);
+    top: 90%;
+}
+
+nav form input.form-control::placeholder {
+    color: rgb(114, 114, 114);
+}
+
+nav form input.form-control:focus {
+    color: white;
+}
+nav form input.form-control {
+    padding-inline-start: 4ch;
+    color: rgba(255, 255, 255, 0.612);
+}
+
+form svg {
+    position: absolute;
+    left: 1ch;
+}
+
+section h5 {
+    display: flex;
+    gap: 0.5ch;
+    align-items: center;
+    margin: 0;
+}
+
+section h5::before {
+    content: "";
+    background-image: url(/assets/logo/prime-logo-large-v4._CB509553088_.png);
+    width: 5ch;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+section .carousel-item [class|="col"]::after {
+    content: url(/assets/logo/prime.svg);
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+
+section .carousel-control-next {
+    left: 100%;
+    width: 30px;
+}
+
+ol.carousel-indicators li {
+    height: 12px;
+    width: 12px;
+}
