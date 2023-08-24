@@ -76,11 +76,11 @@ section h5::before {
     display: inline-block;
 }
 
-section .carousel-item [class|="col"]::after {
+section .carousel-item .card::after {
     content: url(/assets/logo/prime.svg);
     position: absolute;
     top: 0;
-    left: 15px;
+    left: 0;
 }
 
 section .carousel-control-next {
@@ -91,4 +91,78 @@ section .carousel-control-next {
 ol.carousel-indicators li {
     height: 12px;
     width: 12px;
+}
+
+/* img {
+    transition: border 5s cubic-bezier(0.01, 0.81, 0.96, 0.3);
+    border: 3px solid lightseagreen;
+}
+
+img:hover {
+    border: 3px solid red;
+}
+ */
+
+#carouselExampleControls .carousel-inner {
+    overflow: visible;
+}
+
+.carousel-item {
+    z-index: 1;
+    transition: z-index 0.75s ease-in-out;
+}
+
+.carousel-item:hover {
+    z-index: 2;
+}
+
+.carousel-item .card .card-body {
+    opacity: 0;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.75s ease-in-out;
+}
+
+.carousel-item .card {
+    transform: scale(1);
+    transition: transform 0.75s ease-in-out;
+}
+
+.carousel-item .card:hover {
+    transform: scale(1.04);
+    border: 1px solid lightblue;
+}
+
+.carousel-item .card:hover .card-body {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: unset;
+}
+
+.carousel-item .card .card-body::after {
+    content: "";
+    position: absolute;
+    background: red;
+    bottom: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: rgb(52, 58, 64);
+    background: linear-gradient(0deg, rgba(52, 58, 64, 1) 0%, rgba(52, 58, 64, 0) 100%);
+    transition: all 0.75s ease-in-out;
+}
+
+.card-body i::before {
+    opacity: 0.3;
+    transform: scale(1);
+    transition: all 0.75s ease-in-out;
+    cursor: pointer;
+}
+
+.card-body i:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
 }
